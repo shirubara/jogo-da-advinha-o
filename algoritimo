@@ -1,0 +1,22 @@
+from random import randint
+import time
+numero_certo = randint(0, 100)
+vezes = 0
+def tempo():
+    time.sleep(1)
+certo = False
+print('Vamos jogar?')
+print('Estou pensando um numero entre 1 e 100, Tente advinhalo!')
+while  not certo:
+    jogador = int(input('Tente advinhar o numero! '))
+    vezes += 1
+    if jogador == numero_certo:
+        certo =  True
+    else:
+        if jogador > numero_certo:
+            print('Menos... tente denovo! ')
+        elif jogador < numero_certo:
+            print('Mais... Tente denovo...')
+print('Parabens! você acertou o numero que eu estava pensando!')
+tempo()
+print('Teentativas: {}'.format(vezes))
